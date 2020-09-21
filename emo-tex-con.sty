@@ -1,0 +1,146 @@
+\NeedsTeXFormat{LaTeX2e}[2020-02-02 EmoTeXcon]
+\ProvidesClass{emo-tex-con}
+\RequirePackage{xparse}
+\RequirePackage{xfp}
+\RequirePackage{graphicx}
+\ExplSyntaxOn
+\makeatletter
+
+% \EmoTeXcon{text} or \emotexcon{text}
+\NewDocumentCommand\EmoTeXcon{m}{
+  \str_case:nnF {#1} {
+    { 미소 } { \emoji:n { 1 } }
+    { 윙크 } { \emoji:n { 2 } }
+    { 방긋 } { \emoji:n { 3 } }
+    { 반함 } { \emoji:n { 4 } }
+    { 눈물 } { \emoji:n { 5 } }
+    { 절규 } { \emoji:n { 6 } }
+    { 크크 } { \emoji:n { 7 } }
+    { 메롱 } { \emoji:n { 8 } }
+    { 잘자 } { \emoji:n { 9 } }
+    { 잘난척 } { \emoji:n { 10 } }
+    { 헤롱 } { \emoji:n { 11 } }
+    { 놀람 } { \emoji:n { 12 } }
+    { 아픔 } { \emoji:n { 13 } }
+    { 당황 } { \emoji:n { 14 } }
+    { 풍선껌 } { \emoji:n { 15 } }
+    { 버럭 } { \emoji:n { 16 } }
+    { 부끄 } { \emoji:n { 17 } }
+    { 궁금 } { \emoji:n { 18 } }
+    { 흡족 } { \emoji:n { 19 } }
+    { 깜찍 } { \emoji:n { 20 } }
+    { 으으 } { \emoji:n { 21 } }
+    { 민망 } { \emoji:n { 22 } }
+    { 곤란 } { \emoji:n { 23 } }
+    { 잠 } { \emoji:n { 24 } }
+    { 행복 } { \emoji:n { 25 } }
+    { 안도 } { \emoji:n { 26 } }
+    { 우웩 } { \emoji:n { 27 } }
+    { 외계인 } { \emoji:n { 28 } }
+    { 공포 } { \emoji:n { 29 } }
+    { 근심 } { \emoji:n { 30 } }
+    { 악마 } { \emoji:n { 31 } }
+    { 썩소 } { \emoji:n { 32 } }
+    { 쳇 } { \emoji:n { 33 } }
+    { 하트 } { \emoji:n { 34 } }
+    { 오케이 } { \emoji:n { 35 } }
+    { 최고 } { \emoji:n { 36 } }
+    { 최악 } { \emoji:n { 37 } }
+    { 그만 } { \emoji:n { 38 } }
+    { 땀 } { \emoji:n { 39 } }
+    { 알약 } { \emoji:n { 40 } }
+    { 밥 } { \emoji:n { 41 } }
+    { 커피 } { \emoji:n { 42 } }
+    { 맥주 } { \emoji:n { 43 } }
+    { 소주 } { \emoji:n { 44 } }
+    { 축하 } { \emoji:n { 45 } }
+    { 음표 } { \emoji:n { 46 } }
+    { 선물 } { \emoji:n { 47 } }
+    { 케이크 } { \emoji:n { 48 } }
+    { 촛불 } { \emoji:n { 49 } }
+    { 컵케이크a } { \emoji:n { 50 } }
+    { 컵케이크b } { \emoji:n { 51 } }
+    { 해 } { \emoji:n { 52 } }
+    { 구름 } { \emoji:n { 53 } }
+    { 비 } { \emoji:n { 54 } }
+    { 눈 } { \emoji:n { 55 } }
+    { 똥 } { \emoji:n { 56 } }
+    { 근조 } { \emoji:n { 57 } }
+    { 딸기 } { \emoji:n { 58 } }
+    { 호박 } { \emoji:n { 59 } }
+    { 입술 } { \emoji:n { 60 } }
+    { 야옹 } { \emoji:n { 61 } }
+    { 돈 } { \emoji:n { 62 } }
+    { 담배 } { \emoji:n { 63 } }
+    { 축구 } { \emoji:n { 64 } }
+    { 야구 } { \emoji:n { 65 } }
+    { 농구 } { \emoji:n { 66 } }
+    { 당구 } { \emoji:n { 67 } }
+    { 카톡 } { \emoji:n { 68 } }
+    { 야호 } { \emoji:n { 69 } }
+    { 좌절 } { \emoji:n { 70 } }
+    { 삐침 } { \emoji:n { 71 } }
+    { 외계인녀 } { \emoji:n { 72 } }
+    { 브이 } { \emoji:n { 73 } }
+    { 실연 } { \emoji:n { 74 } }
+    { 별 } { \emoji:n { 75 } }
+    { 골프 } { \emoji:n { 76 } }
+    { 콜 } { \emoji:n { 77 } }
+    { 치킨 } { \emoji:n { 78 } }
+    { 와인 } { \emoji:n { 79 } }
+    { 크리스마스 } { \emoji:n { 80 } }
+    { 꽃 } { \emoji:n { 81 } }
+    { 총 } { \emoji:n { 82 } }
+  
+    { 하트뿅 } { \emoji:n { 1001 } }
+    { 하하 } { \emoji:n { 1002 } }
+    { 우와 } { \emoji:n { 1003 } }
+    { 심각 } { \emoji:n { 1004 } }
+    { 힘듦 } { \emoji:n { 1005 } }
+    { 흑흑 } { \emoji:n { 1006 } }
+    { 아잉 } { \emoji:n { 1007 } }
+    { 찡긋 } { \emoji:n { 1008 } }
+    { 뿌듯 } { \emoji:n { 1009 } }
+    { 깜짝 } { \emoji:n { 1010 } }
+    { 빠직 } { \emoji:n { 1011 } }
+    { 짜증 } { \emoji:n { 1012 } }
+    { 제발 } { \emoji:n { 1013 } }
+    { 씨익 } { \emoji:n { 1014 } }
+    { 신나 } { \emoji:n { 1015 } }
+    { 헉 } { \emoji:n { 1016 } }
+    { 열받아 } { \emoji:n { 1017 } }
+    { 흥 } { \emoji:n { 1018 } }
+    { 감동 } { \emoji:n { 1019 } }
+    { 뽀뽀 } { \emoji:n { 1020 } }
+    { 멘붕 } { \emoji:n { 1021 } }
+    { 정색 } { \emoji:n { 1022 } }
+    { 쑥스 } { \emoji:n { 1023 } }
+    { 꺄아 } { \emoji:n { 1024 } }
+    { 좋아 } { \emoji:n { 1025 } }
+    { 굿 } { \emoji:n { 1026 } }
+    { 훌쩍 } { \emoji:n { 1027 } }
+    { 허걱 } { \emoji:n { 1028 } }
+    { 부르르 } { \emoji:n { 1029 } }
+    { 푸하하 } { \emoji:n { 1030 } }
+    { 발그레 } { \emoji:n { 1031 } }
+    { 수줍 } { \emoji:n { 1032 } }
+    { 컴온 } { \emoji:n { 1033 } }
+    { 졸려 } { \emoji:n { 1034 } }
+  }
+  { [?] }
+}
+\let\emotexcon=\EmoTeXcon
+
+\cs_new:Npn \emoji:n #1
+  {
+    \xdef\bigger@f@size{\fpeval{1.5 * \f@size} pt}
+    \xdef\bigger@b@size{\fpeval{-0.3 * \f@size} pt}
+    \raisebox{\bigger@b@size}{
+    \includegraphics
+      [height=\bigger@f@size]
+      { images/emo#1.png } 
+  }
+  }
+  
+\makeatother
+\ExplSyntaxOff
